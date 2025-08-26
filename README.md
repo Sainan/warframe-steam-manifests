@@ -156,6 +156,6 @@
 ## Size
 
 ```
-Total size:                3136262426308 bytes ≈ 3136.26 GB / 2920.87 GiB
-Excluding duplicate files: 2835830598290 bytes ≈ 2835.83 GB / 2641.07 GiB
+Total size:                3,136,262,426,308 bytes ≈ 2920.87 GiB
+Excluding duplicate files: 2,835,830,598,290 bytes ≈ 2641.07 GiB
 ```
