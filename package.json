@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "prettier": "prettier --write .",
-    "wanted": "node scripts/wanted.js",
     "update": "node scripts/update.js",
     "verify": "node scripts/verify.js"
   },
