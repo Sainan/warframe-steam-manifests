@@ -1,0 +1,8 @@
+{
+  "name": "warframe-steam-manifests",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "wanted": "node scripts/wanted.js"
+  }
+}
