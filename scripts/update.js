@@ -29,8 +29,8 @@ function getSize() {
   );
 
   return (
-    `Total size:                ${totalBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalBytes / 1024 ** 3).toFixed(2)} GiB\n` +
-    `Excluding duplicate files: ${totalUniqueBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalUniqueBytes / 1024 ** 3).toFixed(2)} GiB\n`
+    `Total size:          ${totalBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `- Unique files only: ${totalUniqueBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalUniqueBytes / 1024 ** 3).toFixed(2)} GiB\n`
   );
 }
 

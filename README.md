@@ -154,6 +154,6 @@
 | `2013-03-25T20:54:36Z` | 9176710083987114410 | [1.47 GiB](manifests/manifest_230411_9176710083987114410.txt)  |
 
 ```
-Total size:                3,136,262,426,308 bytes ≈ 2920.87 GiB
-Excluding duplicate files: 2,835,830,598,290 bytes ≈ 2641.07 GiB
+Total size:          3,136,262,426,308 bytes ≈ 2920.87 GiB
+- Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
 ```
