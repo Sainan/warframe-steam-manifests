@@ -41,10 +41,10 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
 fh.write("## Manifests\n");
 fh.write("\n");
 fh.write(
-  `| Date                   | Manifest ID         | ${String.fromCodePoint(0x200d)}                                                             |\n`,
+  `| Date                   | Manifest ID         | ${String.fromCodePoint(0x200d)}                                                             | ${String.fromCodePoint(0x200d)}                                         |\n`,
 );
 fh.write(
-  "| ---------------------- | ------------------- | ------------------------------------------------------------- |\n",
+  "| ---------------------- | ------------------- | ------------------------------------------------------------- | ----------------------------------------- |\n",
 );
 
 for (const line of fs
@@ -62,6 +62,10 @@ for (const line of fs
     fh.write(
       `[Manifest](manifests/manifest_230411_${mid}.txt)`.padEnd(61, " "),
     );
+    if (fs.existsSync(path.join(__dirname, "..", `ipfs/${mid}.txt`))) {
+      fh.write(" | ");
+      fh.write(`[IPFS CIDs](ipfs/${mid}.txt)`.padEnd(41, " "));
+    }
   }
   fh.write(" |\n");
 }
