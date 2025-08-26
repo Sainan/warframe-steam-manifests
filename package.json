@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "wanted": "node scripts/wanted.js"
+    "wanted": "node scripts/wanted.js",
+    "size": "node scripts/size.js"
   }
 }
