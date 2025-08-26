@@ -1,2 +1,0 @@
-Total size:                3073642759204 bytes ≈ 3073.64 GB / 2862.55 GiB
-Excluding duplicate files: 2805020692021 bytes ≈ 2805.02 GB / 2612.38 GiB

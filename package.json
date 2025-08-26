@@ -5,8 +5,7 @@
   "scripts": {
     "prettier": "prettier --write .",
     "wanted": "node scripts/wanted.js",
-    "size": "node scripts/size.js",
-    "update": "node scripts/size.js > size.txt",
+    "update": "node scripts/update.js && npm run prettier",
     "verify": "node scripts/verify.js"
   },
   "devDependencies": {
