@@ -40,23 +40,30 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
 
 fh.write("## Manifests\n");
 fh.write("\n");
-fh.write(`Date | Manifest ID | ${String.fromCodePoint(0x200d)}\n`);
-fh.write("---|---|---\n");
+fh.write(
+  `| Date                   | Manifest ID         | ${String.fromCodePoint(0x200d)}                                                             |\n`,
+);
+fh.write(
+  "| ---------------------- | ------------------- | ------------------------------------------------------------- |\n",
+);
 
 for (const line of fs
   .readFileSync(path.join(__dirname, "..", "manifests.txt"), "utf-8")
   .split("\n")
   .filter(Boolean)) {
   const [date, mid] = line.split(" ");
-  fh.write(`\`${date}\` | ${mid} | `);
+  fh.write(`| \`${date}\` | ${mid.padEnd(19, " ")}`);
   if (
     fs.existsSync(
       path.join(__dirname, "..", `manifests/manifest_230411_${mid}.txt`),
     )
   ) {
-    fh.write(`[Manifest](manifests/manifest_230411_${mid}.txt)`);
+    fh.write(" | ");
+    fh.write(
+      `[Manifest](manifests/manifest_230411_${mid}.txt)`.padEnd(61, " "),
+    );
   }
-  fh.write("\n");
+  fh.write(" |\n");
 }
 
 fh.write("\n");
