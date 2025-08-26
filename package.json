@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "wanted": "node scripts/wanted.js",
-    "test": "echo \"No tests specified\" && exit 0"
+    "wanted": "node scripts/wanted.js"
   }
 }
