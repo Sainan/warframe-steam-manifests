@@ -29,11 +29,13 @@ function parseManifest(file) {
 function listFiles(dir) {
   const result = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      result.push(...listFiles(full));
-    } else if (entry.isFile()) {
-      result.push(full);
+    if (entry.name.substr(0, 1) != ".") {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        result.push(...listFiles(full));
+      } else if (entry.isFile()) {
+        result.push(full);
+      }
     }
   }
   return result;
