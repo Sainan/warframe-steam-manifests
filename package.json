@@ -5,7 +5,8 @@
   "scripts": {
     "prettier": "prettier --write .",
     "wanted": "node scripts/wanted.js",
-    "size": "node scripts/size.js"
+    "size": "node scripts/size.js",
+    "update": "node scripts/size.js > size.txt"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
