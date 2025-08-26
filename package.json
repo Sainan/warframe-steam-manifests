@@ -4,6 +4,6 @@
   "private": true,
   "scripts": {
     "wanted": "node scripts/wanted.js",
-    "seedsize": "node scripts/seedsize.js"
+    "size": "node scripts/size.js"
   }
 }

@@ -4,6 +4,7 @@ const path = require("path");
 const manifestsDir = path.join(__dirname, "..", "manifests");
 
 const shaSizes = new Map();
+let totalBytes = 0;
 
 for (const file of fs.readdirSync(manifestsDir)) {
   const filePath = path.join(manifestsDir, file);
@@ -16,16 +17,15 @@ for (const file of fs.readdirSync(manifestsDir)) {
       if (!shaSizes.has(sha)) {
         shaSizes.set(sha, size);
       }
+      totalBytes += size;
     }
   }
 }
 
-const totalBytes = Array.from(shaSizes.values()).reduce(
+const totalUniqueBytes = Array.from(shaSizes.values()).reduce(
   (sum, size) => sum + size,
   0,
 );
-const gigabytes = totalBytes / 1e9;
-const gibibytes = totalBytes / 1024 ** 3;
 
-console.log(`Total unique size: ${totalBytes} bytes`);
-console.log(`≈ ${gigabytes.toFixed(2)} GB / ${gibibytes.toFixed(2)} GiB`);
+console.log(`Total size:                ${totalBytes} bytes ≈ ${(totalBytes / 1e9).toFixed(2)} GB / ${(totalBytes / 1024 ** 3).toFixed(2)} GiB`);
+console.log(`Excluding duplicate files: ${totalUniqueBytes} bytes ≈ ${(totalUniqueBytes / 1e9).toFixed(2)} GB / ${(totalUniqueBytes / 1024 ** 3).toFixed(2)} GiB`);
