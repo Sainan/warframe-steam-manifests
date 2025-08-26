@@ -34,6 +34,18 @@ function getSize() {
   );
 }
 
+function getManifestDiskSize(mid) {
+  const file = path.join(
+    __dirname,
+    "..",
+    `manifests/manifest_230411_${mid}.txt`,
+  );
+  if (!fs.existsSync(file)) return "";
+  const data = fs.readFileSync(file, "utf8");
+  const match = data.match(/Total bytes on disk\s*:\s*(\d+)/);
+  return Number(match[1]);
+}
+
 const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
   flags: "w",
 });
@@ -41,10 +53,10 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
 fh.write("## Manifests\n");
 fh.write("\n");
 fh.write(
-  `| Date                   | Manifest ID         | ${String.fromCodePoint(0x200d)}                                                             | ${String.fromCodePoint(0x200d)}                                         |\n`,
+  `| Date                   | Manifest ID         | ${String.fromCodePoint(0x200d)}                                                             | Size      | ${String.fromCodePoint(0x200d)}                                         |\n`,
 );
 fh.write(
-  "| ---------------------- | ------------------- | ------------------------------------------------------------- | ----------------------------------------- |\n",
+  "| ---------------------- | ------------------- | ------------------------------------------------------------- | --------- | ----------------------------------------- |\n",
 );
 
 for (const line of fs
@@ -62,6 +74,10 @@ for (const line of fs
     fh.write(
       `[Manifest](manifests/manifest_230411_${mid}.txt)`.padEnd(61, " "),
     );
+    fh.write(" | ");
+    fh.write(
+      `${(getManifestDiskSize(mid) / 1024 ** 3).toFixed(2)} GiB`.padEnd(9, " "),
+    );
     if (fs.existsSync(path.join(__dirname, "..", `ipfs/${mid}.txt`))) {
       fh.write(" | ");
       fh.write(`[IPFS CIDs](ipfs/${mid}.txt)`.padEnd(41, " "));
@@ -70,8 +86,6 @@ for (const line of fs
   fh.write(" |\n");
 }
 
-fh.write("\n");
-fh.write("## Size\n");
 fh.write("\n");
 fh.write("```\n");
 fh.write(getSize());
