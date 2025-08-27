@@ -19,7 +19,7 @@ The manifests folder is populated with the results of `DepotDownloader -app 2304
 ### From Steam
 
 ```batch
-DepotDownloader.exe -app 230410 -depot 230411 -manifest MANIFEST_ID_HERE -dir MANIFEST_ID_HERE -username YOUR_USERNAME_HERE -remember-password
+DepotDownloader -app 230410 -depot 230411 -manifest MANIFEST_ID_HERE -dir MANIFEST_ID_HERE -username YOUR_USERNAME_HERE -remember-password
 ipfs add -nr MANIFEST_ID_HERE > MANIFEST_ID_HERE.txt
 ```
 
