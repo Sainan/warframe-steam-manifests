@@ -53,7 +53,7 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
 fh.write("## Manifests\n");
 fh.write("\n");
 fh.write(
-  `| Date                   | Manifest ID         | Files                                                          | ${String.fromCodePoint(0x200d)}                                         |\n`,
+  `| Date                   | Manifest ID         | Content                                                        | ${String.fromCodePoint(0x200d)}                                         |\n`,
 );
 fh.write(
   "| ---------------------- | ------------------- | -------------------------------------------------------------- | ----------------------------------------- |\n",
