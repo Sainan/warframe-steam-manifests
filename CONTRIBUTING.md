@@ -1,6 +1,6 @@
 ## Indexing
 
-The manifests.txt is a simple text-based version of the history found at <https://steamdb.info/depot/230411/manifests/>
+The manifests.txt is a simple text-based version of the history found at <https://steamdb.info/depot/230411/manifests/> with the exception of [6118281920152298389](https://steamdb.info/depot/230411/history/?changeid=M:6118281920152298389)
 
 ## Content Manifests
 
