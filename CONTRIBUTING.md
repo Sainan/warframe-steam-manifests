@@ -1,3 +1,11 @@
+## Indexing
+
+The manifests.txt is a simple text-based version of the history found at <https://steamdb.info/depot/230411/manifests/>
+
+## Content Manifests
+
+The manifests folder is populated with the results of `DepotDownloader -app 230410 -depot 230411 -manifest MANIFEST_ID_HERE -username YOUR_USERNAME_HERE -remember-password -manifest-only`
+
 ## IPFS CIDs
 
 ### From an existing copy
