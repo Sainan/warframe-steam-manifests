@@ -24,3 +24,17 @@ ipfs add -nr MANIFEST_ID_HERE > MANIFEST_ID_HERE.txt
 ```
 
 The `n` flag means it will only compute CIDs without adding it to your node; consider removing it to seed the data.
+
+## Deltas
+
+Deltas are created deterministically using [HDiffPatch v4.11.1](https://github.com/sisong/HDiffPatch/releases/tag/v4.11.1) like so: `hdiffz -m-4 -SD -c-zstd-21-25 -d NEW OLD "NEW to OLD"`
+
+Please note that the `.DepotDownloader` folder needs to be deleted from both folders
+
+Finally, the deltas are recorded in the deltas folder like so:
+
+```bash
+stat --printf="%s\n" "DELTAFILE" > "DELTAFILE.txt"
+sha1sum "DELTAFILE" | awk '{print $1}' >> "DELTAFILE.txt"
+ipfs add "DELTAFILE" | awk '{print $2}' >> "DELTAFILE.txt"
+```
