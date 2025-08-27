@@ -2,35 +2,55 @@ const fs = require("fs");
 const path = require("path");
 
 function getSize() {
-  const manifestsDir = path.join(__dirname, "..", "manifests");
-
-  const shaSizes = new Map();
-  let totalBytes = 0;
-
-  for (const file of fs.readdirSync(manifestsDir)) {
-    const filePath = path.join(manifestsDir, file);
-    const data = fs.readFileSync(filePath, "utf8");
-    for (const line of data.split(/\r?\n/)) {
-      const match = line.match(/^\s*(\d+)\s+\d+\s+([0-9a-f]{40})/i);
-      if (match) {
-        const size = Number(match[1]);
-        const sha = match[2];
-        if (!shaSizes.has(sha)) {
-          shaSizes.set(sha, size);
+  let contentBytes = 0;
+  let uniqueContentBytes = 0;
+  {
+    const manifestsDir = path.join(__dirname, "..", "manifests");
+    const shaSizes = new Map();
+    for (const file of fs.readdirSync(manifestsDir)) {
+      const data = fs.readFileSync(path.join(manifestsDir, file), "utf8");
+      for (const line of data.split(/\r?\n/)) {
+        const match = line.match(/^\s*(\d+)\s+\d+\s+([0-9a-f]{40})/i);
+        if (match) {
+          const size = Number(match[1]);
+          const sha = match[2];
+          if (!shaSizes.has(sha)) {
+            shaSizes.set(sha, size);
+          }
+          contentBytes += size;
         }
-        totalBytes += size;
       }
+    }
+    uniqueContentBytes = Array.from(shaSizes.values()).reduce(
+      (sum, size) => sum + size,
+      0,
+    );
+  }
+
+  let deltaBytes = 0;
+  {
+    const deltasDir = path.join(__dirname, "..", "deltas");
+    for (const file of fs.readdirSync(deltasDir)) {
+      const [deltaSize /*, deltaSha1, deltaCid*/] = fs
+        .readFileSync(path.join(deltasDir, file), "utf8")
+        .split("\n");
+      deltaBytes += Number(deltaSize);
     }
   }
 
-  const totalUniqueBytes = Array.from(shaSizes.values()).reduce(
-    (sum, size) => sum + size,
-    0,
-  );
+  const totalBytes = contentBytes + deltaBytes;
 
   return (
-    `Total size:          ${totalBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalBytes / 1024 ** 3).toFixed(2)} GiB\n` +
-    `- Unique files only: ${totalUniqueBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalUniqueBytes / 1024 ** 3).toFixed(2)} GiB\n`
+    `Total size:            ${totalBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `- Content:             ${contentBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(contentBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `  - Unique files only: ${uniqueContentBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(uniqueContentBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `- Deltas:              ${deltaBytes
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      .padStart(
+        17,
+        " ",
+      )} bytes ≈ ${(deltaBytes / 1024 ** 3).toFixed(2).padStart(7, " ")} GiB\n`
   );
 }
 

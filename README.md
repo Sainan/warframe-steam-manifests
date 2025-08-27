@@ -153,6 +153,8 @@
 | `2013-03-25T20:54:36Z` | 9176710083987114410 | [1.47 GiB](manifests/manifest_230411_9176710083987114410.txt)  | [IPFS CIDs](ipfs/9176710083987114410.txt) |
 
 ```
-Total size:          3,136,262,425,821 bytes ≈ 2920.87 GiB
-- Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
+Total size:            3,137,578,365,635 bytes ≈ 2922.10 GiB
+- Content:             3,136,262,425,821 bytes ≈ 2920.87 GiB
+  - Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
+- Deltas:                  1,315,939,814 bytes ≈    1.23 GiB
 ```
