@@ -80,16 +80,10 @@ function writeTable() {
   fh.write("<table>\n");
   fh.write("  <thead>\n");
   fh.write("    <tr>\n");
-  fh.write('      <th rowspan="2">Date</th>\n');
-  fh.write('      <th rowspan="2">Manifest ID</th>\n');
+  fh.write("      <th>Date</th>\n");
+  fh.write("      <th>Manifest ID</th>\n");
   fh.write('      <th colspan="2">Content</th>\n');
   fh.write('      <th colspan="2">Deltas</th>\n');
-  fh.write("    </tr>\n");
-  fh.write("    <tr>\n");
-  fh.write("      <th>Download</th>\n");
-  fh.write("      <th>IPFS CIDs</th>\n");
-  fh.write("      <th>↓</th>\n");
-  fh.write("      <th>↑</th>\n");
   fh.write("    </tr>\n");
   fh.write("  </thead>\n");
   fh.write("  <tbody>\n");

@@ -3,16 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th rowspan="2">Date</th>
-      <th rowspan="2">Manifest ID</th>
+      <th>Date</th>
+      <th>Manifest ID</th>
       <th colspan="2">Content</th>
       <th colspan="2">Deltas</th>
-    </tr>
-    <tr>
-      <th>Download</th>
-      <th>IPFS CIDs</th>
-      <th>↓</th>
-      <th>↑</th>
     </tr>
   </thead>
   <tbody>
