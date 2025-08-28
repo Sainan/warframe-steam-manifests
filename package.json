@@ -5,7 +5,8 @@
   "scripts": {
     "prettier": "prettier --write .",
     "update": "node scripts/update.js",
-    "verify": "node scripts/verify.js"
+    "verify": "node scripts/verify.js",
+    "delta": "node scripts/add-delta.js"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
