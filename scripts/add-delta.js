@@ -1,17 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const crypto = require("crypto");
 const { execFileSync } = require("child_process");
-
-function sha1(file) {
-  return new Promise((resolve, reject) => {
-    const hash = crypto.createHash("sha1");
-    const stream = fs.createReadStream(file);
-    stream.on("error", reject);
-    stream.on("data", (chunk) => hash.update(chunk));
-    stream.on("end", () => resolve(hash.digest("hex")));
-  });
-}
+const sha1 = require("./sha1");
 
 async function main() {
   const [deltaPath] = process.argv.slice(2);
