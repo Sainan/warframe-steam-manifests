@@ -72,12 +72,39 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
 
 fh.write("## Manifests\n");
 fh.write("\n");
-fh.write(
-  `| Date                   | Manifest ID         | Content                                                        | ${String.fromCodePoint(0x200d)}                                         | Deltas                                                                                                                                          |\n`,
-);
-fh.write(
-  "| ---------------------- | ------------------- | -------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |\n",
-);
+
+const table = [];
+function openTable(...cols) {
+  table.push(cols);
+}
+function addRow(...cols) {
+  table.push(cols);
+}
+function closeTable() {
+  const numCols = table[0].length;
+  const colLens = Array(numCols).fill(numCols);
+  for (const row of table) {
+    for (let col = 0; col != numCols; ++col) {
+      colLens[col] = Math.max(colLens[col], row[col].length);
+    }
+  }
+  {
+    const line = Array(numCols);
+    for (let col = 0; col != numCols; ++col) {
+      line[col] = "-".repeat(colLens[col]);
+    }
+    table.splice(1, 0, line);
+  }
+  for (const row of table) {
+    fh.write("|");
+    for (let col = 0; col != numCols; ++col) {
+      fh.write(" ");
+      fh.write((row[col] || String.fromCodePoint(0x200d)).padEnd(colLens[col]));
+      fh.write(" |");
+    }
+    fh.write("\n");
+  }
+}
 
 const manifests = [];
 {
@@ -97,81 +124,62 @@ const manifests = [];
   }
 }
 
+openTable("Date", "Manifest ID", "Content", "", "Deltas", "");
 for (const manifest of manifests) {
   const mid = manifest.mid;
-  fh.write(`| \`${manifest.date}\` | ${mid.padEnd(19, " ")}`);
+  let content = "";
+  let cids = "";
+  let downdelta = "";
+  let updelta = "";
   if (
     fs.existsSync(
       path.join(__dirname, "..", `manifests/manifest_230411_${mid}.txt`),
     )
   ) {
-    fh.write(" | ");
-    fh.write(
-      `[${(getManifestDiskSize(mid) / 1024 ** 3).toFixed(2)} GiB](manifests/manifest_230411_${mid}.txt)`.padEnd(
-        62,
-        " ",
-      ),
-    );
-    if (fs.existsSync(path.join(__dirname, "..", `ipfs/${mid}.txt`))) {
-      fh.write(" | ");
-      fh.write(`[IPFS CIDs](ipfs/${mid}.txt)`.padEnd(41, " "));
-      const deltas = [];
-      if (
-        manifest.older &&
-        fs.existsSync(
-          path.join(
-            __dirname,
-            "..",
-            `deltas/${mid} to ${manifest.older.mid}.txt`,
-          ),
-        )
-      ) {
-        const [deltaSize /*, deltaSha1, deltaCid*/] = fs
-          .readFileSync(
-            path.join(
-              __dirname,
-              "..",
-              `deltas/${mid} to ${manifest.older.mid}.txt`,
-            ),
-            "utf-8",
-          )
-          .split("\n");
-        deltas.push(
-          `↓ [${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.older.mid}.txt>)`,
-        );
-      }
-      if (
-        manifest.newer &&
-        fs.existsSync(
-          path.join(
-            __dirname,
-            "..",
-            `deltas/${mid} to ${manifest.newer.mid}.txt`,
-          ),
-        )
-      ) {
-        const [deltaSize /*, deltaSha1, deltaCid*/] = fs
-          .readFileSync(
-            path.join(
-              __dirname,
-              "..",
-              `deltas/${mid} to ${manifest.newer.mid}.txt`,
-            ),
-            "utf-8",
-          )
-          .split("\n");
-        deltas.push(
-          `↑ [${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.newer.mid}.txt>)`,
-        );
-      }
-      if (deltas.length) {
-        fh.write(" | ");
-        fh.write(deltas.join(" ").padEnd(143, " "));
-      }
-    }
+    content = `[${(getManifestDiskSize(mid) / 1024 ** 3).toFixed(2)} GiB](manifests/manifest_230411_${mid}.txt)`;
   }
-  fh.write(" |\n");
+  if (fs.existsSync(path.join(__dirname, "..", `ipfs/${mid}.txt`))) {
+    cids = `[IPFS CIDs](ipfs/${mid}.txt)`;
+  }
+  if (
+    manifest.older &&
+    fs.existsSync(
+      path.join(__dirname, "..", `deltas/${mid} to ${manifest.older.mid}.txt`),
+    )
+  ) {
+    const [deltaSize /*, deltaSha1, deltaCid*/] = fs
+      .readFileSync(
+        path.join(
+          __dirname,
+          "..",
+          `deltas/${mid} to ${manifest.older.mid}.txt`,
+        ),
+        "utf-8",
+      )
+      .split("\n");
+    downdelta = `↓ [${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.older.mid}.txt>)`;
+  }
+  if (
+    manifest.newer &&
+    fs.existsSync(
+      path.join(__dirname, "..", `deltas/${mid} to ${manifest.newer.mid}.txt`),
+    )
+  ) {
+    const [deltaSize /*, deltaSha1, deltaCid*/] = fs
+      .readFileSync(
+        path.join(
+          __dirname,
+          "..",
+          `deltas/${mid} to ${manifest.newer.mid}.txt`,
+        ),
+        "utf-8",
+      )
+      .split("\n");
+    updelta = `↑ [${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.newer.mid}.txt>)`;
+  }
+  addRow(`\`${manifest.date}\``, mid, content, cids, downdelta, updelta);
 }
+closeTable();
 
 fh.write("\n");
 fh.write("```\n");
