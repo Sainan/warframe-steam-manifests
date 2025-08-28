@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const sha1 = require("./sha1");
+const { sha1 } = require("./common");
 
 function findManifest(id) {
   const manifestsDir = path.join(__dirname, "..", "manifests");

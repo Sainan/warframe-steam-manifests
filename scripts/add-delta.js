@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
-const sha1 = require("./sha1");
+const { sha1 } = require("./common");
 
 async function main() {
   const [deltaPath] = process.argv.slice(2);
