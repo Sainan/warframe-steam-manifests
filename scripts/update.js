@@ -90,7 +90,9 @@ function writeTable() {
   for (const row of rows) {
     fh.write("    <tr>\n");
     for (const col of row) {
-      fh.write(`      <td>${col || ""}</td>\n`);
+      const attrs =
+        col && /(GiB|MiB)/.test(col) ? ' style="text-align: right;"' : "";
+      fh.write(`      <td${attrs}>${col || ""}</td>\n`);
     }
     fh.write("    </tr>\n");
   }
