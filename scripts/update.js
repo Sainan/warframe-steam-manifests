@@ -73,10 +73,10 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
 fh.write("## Manifests\n");
 fh.write("\n");
 fh.write(
-  `| Date                   | Manifest ID         | Content                                                        | ${String.fromCodePoint(0x200d)}                                         | Downgrade Delta                                                       |\n`,
+  `| Date                   | Manifest ID         | Content                                                        | ${String.fromCodePoint(0x200d)}                                         | Deltas                                                                                                                                          |\n`,
 );
 fh.write(
-  "| ---------------------- | ------------------- | -------------------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------------- |\n",
+  "| ---------------------- | ------------------- | -------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |\n",
 );
 
 const manifests = [];
@@ -89,7 +89,7 @@ const manifests = [];
     const [date, mid] = line.split(" ");
     const meta = { mid, date };
     if (newer) {
-      //meta.newer = newer;
+      meta.newer = newer;
       newer.older = meta;
     }
     manifests.push(meta);
@@ -115,6 +115,7 @@ for (const manifest of manifests) {
     if (fs.existsSync(path.join(__dirname, "..", `ipfs/${mid}.txt`))) {
       fh.write(" | ");
       fh.write(`[IPFS CIDs](ipfs/${mid}.txt)`.padEnd(41, " "));
+      const deltas = [];
       if (
         manifest.older &&
         fs.existsSync(
@@ -135,13 +136,37 @@ for (const manifest of manifests) {
             "utf-8",
           )
           .split("\n");
-        fh.write(" | ");
-        fh.write(
-          `[${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.older.mid}.txt>)`.padEnd(
-            69,
-            " ",
-          ),
+        deltas.push(
+          `↓ [${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.older.mid}.txt>)`,
         );
+      }
+      if (
+        manifest.newer &&
+        fs.existsSync(
+          path.join(
+            __dirname,
+            "..",
+            `deltas/${mid} to ${manifest.newer.mid}.txt`,
+          ),
+        )
+      ) {
+        const [deltaSize /*, deltaSha1, deltaCid*/] = fs
+          .readFileSync(
+            path.join(
+              __dirname,
+              "..",
+              `deltas/${mid} to ${manifest.newer.mid}.txt`,
+            ),
+            "utf-8",
+          )
+          .split("\n");
+        deltas.push(
+          `↑ [${(Number(deltaSize) / 1024 ** 2).toFixed(2)} MiB](<deltas/${mid} to ${manifest.newer.mid}.txt>)`,
+        );
+      }
+      if (deltas.length) {
+        fh.write(" | ");
+        fh.write(deltas.join(" ").padEnd(143, " "));
       }
     }
   }

@@ -34,7 +34,13 @@ Please note that the `.DepotDownloader` folder needs to be deleted from both fol
 Finally, the deltas are recorded in the deltas folder like so:
 
 ```bash
-stat --printf="%s\n" "DELTAFILE" > "DELTAFILE.txt"
-sha1sum "DELTAFILE" | awk '{print $1}' >> "DELTAFILE.txt"
-ipfs add "DELTAFILE" | awk '{print $2}' >> "DELTAFILE.txt"
+for f in *; do
+  [ -f "$f" ] || continue   # skip directories, only process regular files
+  out="$f.txt"
+  stat --printf="%s\n" "$f" > "$out"
+  sha1sum "$f" | awk '{print $1}' >> "$out"
+  ipfs add -Qn "$f" >> "$out"
+done
 ```
+
+The `n` flag means it will only compute CIDs without adding it to your node; consider removing it to seed the data.
