@@ -34,7 +34,10 @@ hdiffz -m-4 -SD -c-zstd-21-25 -d builds/NEW builds/OLD "deltas/NEW to OLD"
 hdiffz -m-4 -SD -c-zstd-21-25 -d builds/OLD builds/NEW "deltas/OLD to NEW"
 ```
 
-Please note that the `.DepotDownloader` folder needs to be deleted from both folders
+Before you begin, some important notes:
+
+- The `.DepotDownloader` folder needs to be deleted from both folders
+- For the latest ~45 GiB builds, expect up to 140 GiB to be allocated in memory, so ensure your swapfile is big enough to provide ample buffer.
 
 Finally, the "deltas" folder in this repository is populated with the metadata:
 

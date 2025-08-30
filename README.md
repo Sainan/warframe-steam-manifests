@@ -23,7 +23,7 @@
       <td>6046892458385712496</td>
       <td><a href="manifests/manifest_230411_6046892458385712496.txt">45.95 GiB</a></td>
       <td><a href="ipfs/6046892458385712496.txt">IPFS CIDs</a></td>
-      <td></td>
+      <td>↓ <a href="deltas/6046892458385712496%20to%204212893560910494140.txt">1012.59 MiB</a></td>
       <td>↑ <a href="deltas/6046892458385712496%20to%208391191747297658560.txt">2.93 GiB</a></td>
     </tr>
     <tr>
@@ -31,8 +31,8 @@
       <td>4212893560910494140</td>
       <td><a href="manifests/manifest_230411_4212893560910494140.txt">45.79 GiB</a></td>
       <td><a href="ipfs/4212893560910494140.txt">IPFS CIDs</a></td>
-      <td></td>
-      <td></td>
+      <td>↓ <a href="deltas/4212893560910494140%20to%203864063200081954630.txt">2.89 GiB</a></td>
+      <td>↑ <a href="deltas/4212893560910494140%20to%206046892458385712496.txt">1.14 GiB</a></td>
     </tr>
     <tr>
       <td><code>2024-12-13T14:01:34Z</code></td>
@@ -40,7 +40,7 @@
       <td><a href="manifests/manifest_230411_3864063200081954630.txt">44.89 GiB</a></td>
       <td><a href="ipfs/3864063200081954630.txt">IPFS CIDs</a></td>
       <td></td>
-      <td></td>
+      <td>↑ <a href="deltas/3864063200081954630%20to%204212893560910494140.txt">3.80 GiB</a></td>
     </tr>
     <tr>
       <td><code>2024-10-11T16:05:33Z</code></td>
@@ -1206,8 +1206,8 @@
 </table>
 
 ```
-Total size:            3,144,971,165,693 bytes ≈ 2928.98 GiB
+Total size:            3,154,445,674,277 bytes ≈ 2937.81 GiB
 - Content:             3,136,262,425,821 bytes ≈ 2920.87 GiB
   - Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
-- Deltas:                  8,708,739,872 bytes ≈    8.11 GiB
+- Deltas:                 18,183,248,456 bytes ≈   16.93 GiB
 ```
