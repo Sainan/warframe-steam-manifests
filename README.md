@@ -54,7 +54,7 @@
       <td><code>2024-10-02T15:01:14Z</code></td>
       <td>2655930801276651913</td>
       <td><a href="manifests/manifest_230411_2655930801276651913.txt">42.80 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/2655930801276651913.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
