@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 function formatBytes(bytes) {
-  const useGiB = bytes >= 1024 ** 3;
+  const useGiB = bytes >= 1000 ** 3;
   const divisor = useGiB ? 1024 ** 3 : 1024 ** 2;
   const unit = useGiB ? "GiB" : "MiB";
   return `${(bytes / divisor).toFixed(2)} ${unit}`;
