@@ -47,7 +47,7 @@
       <td>513490184226321110</td>
       <td><a href="manifests/manifest_230411_513490184226321110.txt">42.80 GiB</a></td>
       <td><a href="ipfs/513490184226321110.txt">IPFS CIDs</a></td>
-      <td></td>
+      <td>↓ <a href="deltas/513490184226321110%20to%202655930801276651913.txt">914.63 MiB</a></td>
       <td>↑ <a href="deltas/513490184226321110%20to%203864063200081954630.txt">4.70 GiB</a></td>
     </tr>
     <tr>
@@ -56,7 +56,7 @@
       <td><a href="manifests/manifest_230411_2655930801276651913.txt">42.80 GiB</a></td>
       <td><a href="ipfs/2655930801276651913.txt">IPFS CIDs</a></td>
       <td></td>
-      <td></td>
+      <td>↑ <a href="deltas/2655930801276651913%20to%20513490184226321110.txt">930.71 MiB</a></td>
     </tr>
     <tr>
       <td><code>2024-08-22T15:13:48Z</code></td>
@@ -1206,8 +1206,8 @@
 </table>
 
 ```
-Total size:            3,162,481,164,999 bytes ≈ 2945.29 GiB
+Total size:            3,164,416,153,371 bytes ≈ 2947.09 GiB
 - Content:             3,136,262,425,821 bytes ≈ 2920.87 GiB
   - Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
-- Deltas:                 26,218,739,178 bytes ≈   24.42 GiB
+- Deltas:                 28,153,727,550 bytes ≈   26.22 GiB
 ```
