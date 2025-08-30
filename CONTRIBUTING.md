@@ -23,6 +23,17 @@ DepotDownloader -app 230410 -depot 230411 -manifest MANIFEST_ID_HERE -dir MANIFE
 ipfs add -r MANIFEST_ID_HERE > MANIFEST_ID_HERE.txt
 ```
 
+Or in bulk:
+
+```bash
+mkdir -p ../metadata/ipfs
+for f in *; do
+  out="../metadata/ipfs/$f.txt"
+  [ -f "$out" ] && continue # skip if out file already exists
+  ipfs add -r $f > "$out"
+done
+```
+
 ## Deltas
 
 Deltas are created deterministically using [HDiffPatch v4.11.1](https://github.com/sisong/HDiffPatch/releases/tag/v4.11.1) in both directions:
@@ -34,7 +45,7 @@ hdiffz -m-4 -SD -c-zstd-21-25 -d builds/OLD builds/NEW "deltas/OLD to NEW"
 
 Before you begin, some important notes:
 
-- The `.DepotDownloader` folder needs to be deleted from both folders
+- The `.DepotDownloader` folder needs to be deleted from both folders (e.g. via `rm -r builds/*/.DepotDownloader`)
 - For the latest ~45 GiB builds, expect up to 140 GiB to be allocated in memory, so ensure your swapfile is big enough to provide ample buffer.
 
 Finally, the "deltas" folder in this repository is populated with the metadata:
@@ -42,8 +53,8 @@ Finally, the "deltas" folder in this repository is populated with the metadata:
 ```bash
 mkdir -p metadata/deltas
 for f in deltas/*; do
-  [ -f "$f" ] || continue   # skip directories, only process regular files
   out="metadata/$f.txt"
+  [ -f "$out" ] && continue # skip if out file already exists
   stat --printf="%s\n" "$f" > "$out"
   sha1sum "$f" | awk '{print $1}' >> "$out"
   ipfs add -Q "$f" >> "$out"
