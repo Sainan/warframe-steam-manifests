@@ -27,7 +27,12 @@ The `n` flag means it will only compute CIDs without adding it to your node; con
 
 ## Deltas
 
-Deltas are created deterministically using [HDiffPatch v4.11.1](https://github.com/sisong/HDiffPatch/releases/tag/v4.11.1) like so: `hdiffz -m-4 -SD -c-zstd-21-25 -d NEW OLD "NEW to OLD"`
+Deltas are created deterministically using [HDiffPatch v4.11.1](https://github.com/sisong/HDiffPatch/releases/tag/v4.11.1) in both directions:
+
+```bash
+hdiffz -m-4 -SD -c-zstd-21-25 -d NEW OLD "NEW to OLD"
+hdiffz -m-4 -SD -c-zstd-21-25 -d OLD NEW "OLD to NEW"
+```
 
 Please note that the `.DepotDownloader` folder needs to be deleted from both folders
 
