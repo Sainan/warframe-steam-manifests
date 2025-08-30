@@ -1,6 +1,13 @@
 const fs = require("fs");
 const path = require("path");
 
+function formatBytes(bytes) {
+  const useGiB = bytes >= 1024 ** 3;
+  const divisor = useGiB ? 1024 ** 3 : 1024 ** 2;
+  const unit = useGiB ? "GiB" : "MiB";
+  return `${(bytes / divisor).toFixed(2)} ${unit}`;
+}
+
 function getSize() {
   let contentBytes = 0;
   let uniqueContentBytes = 0;
@@ -41,16 +48,25 @@ function getSize() {
   const totalBytes = contentBytes + deltaBytes;
 
   return (
-    `Total size:            ${totalBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalBytes / 1024 ** 3).toFixed(2)} GiB\n` +
-    `- Content:             ${contentBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(contentBytes / 1024 ** 3).toFixed(2)} GiB\n` +
-    `  - Unique files only: ${uniqueContentBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(uniqueContentBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `Total size:            ${totalBytes
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${formatBytes(
+      totalBytes,
+    )}\n` +
+    `- Content:             ${contentBytes
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${formatBytes(
+      contentBytes,
+    )}\n` +
+    `  - Unique files only: ${uniqueContentBytes
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${formatBytes(
+      uniqueContentBytes,
+    )}\n` +
     `- Deltas:              ${deltaBytes
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      .padStart(
-        17,
-        " ",
-      )} bytes ≈ ${(deltaBytes / 1024 ** 3).toFixed(2).padStart(7, " ")} GiB\n`
+      .padStart(17, " ")} bytes ≈ ${formatBytes(deltaBytes)}\n`
   );
 }
 
@@ -127,10 +143,9 @@ for (const manifest of manifests) {
       path.join(__dirname, "..", `manifests/manifest_230411_${mid}.txt`),
     )
   ) {
-    content = `<a href="manifests/manifest_230411_${mid}.txt">${(
-      getManifestDiskSize(mid) /
-      1024 ** 3
-    ).toFixed(2)} GiB</a>`;
+    content = `<a href="manifests/manifest_230411_${mid}.txt">${formatBytes(
+      getManifestDiskSize(mid),
+    )}</a>`;
   }
   if (fs.existsSync(path.join(__dirname, "..", `ipfs/${mid}.txt`))) {
     cids = `<a href="ipfs/${mid}.txt">IPFS CIDs</a>`;
@@ -152,10 +167,7 @@ for (const manifest of manifests) {
       )
       .split("\n");
     const downLink = encodeURI(`deltas/${mid} to ${manifest.older.mid}.txt`);
-    downdelta = `↓ <a href="${downLink}">${(
-      Number(deltaSize) /
-      1024 ** 2
-    ).toFixed(2)} MiB</a>`;
+    downdelta = `↓ <a href="${downLink}">${formatBytes(Number(deltaSize))}</a>`;
   }
   if (
     manifest.newer &&
@@ -174,9 +186,7 @@ for (const manifest of manifests) {
       )
       .split("\n");
     const upLink = encodeURI(`deltas/${mid} to ${manifest.newer.mid}.txt`);
-    updelta = `↑ <a href="${upLink}">${(Number(deltaSize) / 1024 ** 2).toFixed(
-      2,
-    )} MiB</a>`;
+    updelta = `↑ <a href="${upLink}">${formatBytes(Number(deltaSize))}</a>`;
   }
   addRow(
     `<code>${manifest.date}</code>`,
