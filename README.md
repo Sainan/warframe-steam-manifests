@@ -15,7 +15,7 @@
       <td>8391191747297658560</td>
       <td><a href="manifests/manifest_230411_8391191747297658560.txt">46.38 GiB</a></td>
       <td><a href="ipfs/8391191747297658560.txt">IPFS CIDs</a></td>
-      <td>↓ <a href="deltas/8391191747297658560%20to%206046892458385712496.txt">2584.29 MiB</a></td>
+      <td>↓ <a href="deltas/8391191747297658560%20to%206046892458385712496.txt">2.52 GiB</a></td>
       <td></td>
     </tr>
     <tr>
@@ -24,7 +24,7 @@
       <td><a href="manifests/manifest_230411_6046892458385712496.txt">45.95 GiB</a></td>
       <td><a href="ipfs/6046892458385712496.txt">IPFS CIDs</a></td>
       <td></td>
-      <td>↑ <a href="deltas/6046892458385712496%20to%208391191747297658560.txt">3002.47 MiB</a></td>
+      <td>↑ <a href="deltas/6046892458385712496%20to%208391191747297658560.txt">2.93 GiB</a></td>
     </tr>
     <tr>
       <td><code>2025-03-19T14:55:56Z</code></td>
