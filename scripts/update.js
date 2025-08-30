@@ -48,25 +48,16 @@ function getSize() {
   const totalBytes = contentBytes + deltaBytes;
 
   return (
-    `Total size:            ${totalBytes
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${formatBytes(
-      totalBytes,
-    )}\n` +
-    `- Content:             ${contentBytes
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${formatBytes(
-      contentBytes,
-    )}\n` +
-    `  - Unique files only: ${uniqueContentBytes
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${formatBytes(
-      uniqueContentBytes,
-    )}\n` +
+    `Total size:            ${totalBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(totalBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `- Content:             ${contentBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(contentBytes / 1024 ** 3).toFixed(2)} GiB\n` +
+    `  - Unique files only: ${uniqueContentBytes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} bytes ≈ ${(uniqueContentBytes / 1024 ** 3).toFixed(2)} GiB\n` +
     `- Deltas:              ${deltaBytes
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      .padStart(17, " ")} bytes ≈ ${formatBytes(deltaBytes)}\n`
+      .padStart(
+        17,
+        " ",
+      )} bytes ≈ ${(deltaBytes / 1024 ** 3).toFixed(2).padStart(7, " ")} GiB\n`
   );
 }
 

@@ -1209,5 +1209,5 @@
 Total size:            3,144,971,165,693 bytes ≈ 2928.98 GiB
 - Content:             3,136,262,425,821 bytes ≈ 2920.87 GiB
   - Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
-- Deltas:                  8,708,739,872 bytes ≈ 8.11 GiB
+- Deltas:                  8,708,739,872 bytes ≈    8.11 GiB
 ```
