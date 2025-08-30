@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const crypto = require("crypto");
+const { sha1 } = require("./common");
 
 function findManifest(id) {
   const manifestsDir = path.join(__dirname, "..", "manifests");
@@ -39,16 +39,6 @@ function listFiles(dir) {
     }
   }
   return result;
-}
-
-function sha1(file) {
-  return new Promise((resolve, reject) => {
-    const hash = crypto.createHash("sha1");
-    const stream = fs.createReadStream(file);
-    stream.on("error", reject);
-    stream.on("data", (chunk) => hash.update(chunk));
-    stream.on("end", () => resolve(hash.digest("hex")));
-  });
 }
 
 async function main() {
