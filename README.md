@@ -784,7 +784,7 @@
       <td><a href="manifests/manifest_230411_567734397704178704.txt">9.24 GiB</a></td>
       <td><a href="ipfs/567734397704178704.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/567734397704178704%20to%205952644847955190118.txt">404.56 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/567734397704178704%20to%20232461576962714068.txt">741.62 MiB</a></td>
     </tr>
     <tr>
       <td><code>2015-02-13T21:54:21Z</code></td>
@@ -792,7 +792,7 @@
       <td><a href="manifests/manifest_230411_5952644847955190118.txt">8.96 GiB</a></td>
       <td><a href="ipfs/5952644847955190118.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/5952644847955190118%20to%207377933404197762308.txt">472.55 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/5952644847955190118%20to%20567734397704178704.txt">470.63 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-11-27T22:44:26Z</code></td>
@@ -800,7 +800,7 @@
       <td><a href="manifests/manifest_230411_7377933404197762308.txt">8.26 GiB</a></td>
       <td><a href="ipfs/7377933404197762308.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/7377933404197762308%20to%206368936033089773713.txt">758.98 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/7377933404197762308%20to%205952644847955190118.txt">892.42 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-10-30T04:01:34Z</code></td>
@@ -808,7 +808,7 @@
       <td><a href="manifests/manifest_230411_6368936033089773713.txt">7.93 GiB</a></td>
       <td><a href="ipfs/6368936033089773713.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/6368936033089773713%20to%201212629036031221707.txt">386.62 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/6368936033089773713%20to%207377933404197762308.txt">0.97 GiB</a></td>
     </tr>
     <tr>
       <td><code>2014-10-29T02:48:52Z</code></td>
@@ -816,7 +816,7 @@
       <td><a href="manifests/manifest_230411_1212629036031221707.txt">8.16 GiB</a></td>
       <td><a href="ipfs/1212629036031221707.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1212629036031221707%20to%201048315274024428186.txt">3.58 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1212629036031221707%20to%206368936033089773713.txt">406.34 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-10-28T05:43:46Z</code></td>
@@ -824,7 +824,7 @@
       <td><a href="manifests/manifest_230411_1048315274024428186.txt">8.16 GiB</a></td>
       <td><a href="ipfs/1048315274024428186.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1048315274024428186%20to%206636116079410913663.txt">177.62 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1048315274024428186%20to%201212629036031221707.txt">3.60 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-10-24T14:45:50Z</code></td>
@@ -832,7 +832,7 @@
       <td><a href="manifests/manifest_230411_6636116079410913663.txt">7.81 GiB</a></td>
       <td><a href="ipfs/6636116079410913663.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/6636116079410913663%20to%204885795964507366541.txt">494.05 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/6636116079410913663%20to%201048315274024428186.txt">156.59 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-09-24T22:30:37Z</code></td>
@@ -840,7 +840,7 @@
       <td><a href="manifests/manifest_230411_4885795964507366541.txt">6.72 GiB</a></td>
       <td><a href="ipfs/4885795964507366541.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/4885795964507366541%20to%207887393592947262939.txt">3.04 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/4885795964507366541%20to%206636116079410913663.txt">1.37 GiB</a></td>
     </tr>
     <tr>
       <td><code>2014-09-23T21:47:50Z</code></td>
@@ -848,7 +848,7 @@
       <td><a href="manifests/manifest_230411_7887393592947262939.txt">6.72 GiB</a></td>
       <td><a href="ipfs/7887393592947262939.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/7887393592947262939%20to%208779732662024957928.txt">0.99 GiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/7887393592947262939%20to%204885795964507366541.txt">3.05 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-08-28T19:49:33Z</code></td>
@@ -856,7 +856,7 @@
       <td><a href="manifests/manifest_230411_8779732662024957928.txt">13.32 GiB</a></td>
       <td><a href="ipfs/8779732662024957928.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/8779732662024957928%20to%207091405412400346572.txt">156.87 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/8779732662024957928%20to%207887393592947262939.txt">174.15 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-07-22T02:23:23Z</code></td>
@@ -864,7 +864,7 @@
       <td><a href="manifests/manifest_230411_7091405412400346572.txt">6.37 GiB</a></td>
       <td><a href="ipfs/7091405412400346572.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/7091405412400346572%20to%207211838851606425341.txt">507.59 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/7091405412400346572%20to%208779732662024957928.txt">1.04 GiB</a></td>
     </tr>
     <tr>
       <td><code>2014-05-23T21:22:32Z</code></td>
@@ -872,7 +872,7 @@
       <td><a href="manifests/manifest_230411_7211838851606425341.txt">6.01 GiB</a></td>
       <td><a href="ipfs/7211838851606425341.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/7211838851606425341%20to%205876704438298513797.txt">218.10 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/7211838851606425341%20to%207091405412400346572.txt">0.99 GiB</a></td>
     </tr>
     <tr>
       <td><code>2014-04-11T13:09:40Z</code></td>
@@ -880,7 +880,7 @@
       <td><a href="manifests/manifest_230411_5876704438298513797.txt">5.91 GiB</a></td>
       <td><a href="ipfs/5876704438298513797.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/5876704438298513797%20to%203406168191948447048.txt">223.79 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/5876704438298513797%20to%207211838851606425341.txt">253.04 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-03-06T06:30:37Z</code></td>
@@ -888,7 +888,7 @@
       <td><a href="manifests/manifest_230411_3406168191948447048.txt">5.59 GiB</a></td>
       <td><a href="ipfs/3406168191948447048.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/3406168191948447048%20to%207515523599342296232.txt">268.00 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/3406168191948447048%20to%205876704438298513797.txt">429.03 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-02-21T01:41:31Z</code></td>
@@ -896,7 +896,7 @@
       <td><a href="manifests/manifest_230411_7515523599342296232.txt">4.55 GiB</a></td>
       <td><a href="ipfs/7515523599342296232.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/7515523599342296232%20to%204190426140757030330.txt">3.36 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/7515523599342296232%20to%203406168191948447048.txt">853.88 MiB</a></td>
     </tr>
     <tr>
       <td><code>2014-02-08T00:57:36Z</code></td>
@@ -904,7 +904,7 @@
       <td><a href="manifests/manifest_230411_4190426140757030330.txt">4.54 GiB</a></td>
       <td><a href="ipfs/4190426140757030330.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/4190426140757030330%20to%20585340885135755161.txt">4.80 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/4190426140757030330%20to%207515523599342296232.txt">4.35 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-12-22T15:14:08Z</code></td>
@@ -912,7 +912,7 @@
       <td><a href="manifests/manifest_230411_585340885135755161.txt">4.53 GiB</a></td>
       <td><a href="ipfs/585340885135755161.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/585340885135755161%20to%202135033526713381905.txt">112.19 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/585340885135755161%20to%204190426140757030330.txt">6.34 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-11-30T04:19:49Z</code></td>
@@ -920,7 +920,7 @@
       <td><a href="manifests/manifest_230411_2135033526713381905.txt">4.42 GiB</a></td>
       <td><a href="ipfs/2135033526713381905.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/2135033526713381905%20to%204839307268506097307.txt">313.39 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/2135033526713381905%20to%20585340885135755161.txt">166.96 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-11-15T23:25:28Z</code></td>
@@ -928,7 +928,7 @@
       <td><a href="manifests/manifest_230411_4839307268506097307.txt">4.03 GiB</a></td>
       <td><a href="ipfs/4839307268506097307.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/4839307268506097307%20to%201764044531028780660.txt">297.12 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/4839307268506097307%20to%202135033526713381905.txt">609.81 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-10-11T23:07:52Z</code></td>
@@ -936,7 +936,7 @@
       <td><a href="manifests/manifest_230411_1764044531028780660.txt">4.17 GiB</a></td>
       <td><a href="ipfs/1764044531028780660.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1764044531028780660%20to%201734697414845714540.txt">337.95 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1764044531028780660%20to%204839307268506097307.txt">319.63 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-09-25T14:39:24Z</code></td>
@@ -944,7 +944,7 @@
       <td><a href="manifests/manifest_230411_1734697414845714540.txt">2.97 GiB</a></td>
       <td><a href="ipfs/1734697414845714540.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1734697414845714540%20to%201806108333186250272.txt">5.20 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1734697414845714540%20to%201764044531028780660.txt">0.98 GiB</a></td>
     </tr>
     <tr>
       <td><code>2013-08-14T18:17:36Z</code></td>
@@ -952,7 +952,7 @@
       <td><a href="manifests/manifest_230411_1806108333186250272.txt">2.97 GiB</a></td>
       <td><a href="ipfs/1806108333186250272.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1806108333186250272%20to%203366147248454027595.txt">275.46 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1806108333186250272%20to%201734697414845714540.txt">5.31 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-07-16T17:37:00Z</code></td>
@@ -960,7 +960,7 @@
       <td><a href="manifests/manifest_230411_3366147248454027595.txt">2.90 GiB</a></td>
       <td><a href="ipfs/3366147248454027595.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/3366147248454027595%20to%20767517711548082020.txt">405.55 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/3366147248454027595%20to%201806108333186250272.txt">265.93 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-07-05T20:27:14Z</code></td>
@@ -968,7 +968,7 @@
       <td><a href="manifests/manifest_230411_767517711548082020.txt">2.94 GiB</a></td>
       <td><a href="ipfs/767517711548082020.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/767517711548082020%20to%20647709821457915915.txt">450.52 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/767517711548082020%20to%203366147248454027595.txt">525.80 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-06-08T16:36:30Z</code></td>
@@ -976,7 +976,7 @@
       <td><a href="manifests/manifest_230411_647709821457915915.txt">2.44 GiB</a></td>
       <td><a href="ipfs/647709821457915915.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/647709821457915915%20to%205108594067645371108.txt">287.86 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/647709821457915915%20to%20767517711548082020.txt">713.39 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-23T21:53:36Z</code></td>
@@ -984,7 +984,7 @@
       <td><a href="manifests/manifest_230411_5108594067645371108.txt">2.43 GiB</a></td>
       <td><a href="ipfs/5108594067645371108.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/5108594067645371108%20to%207689210280991293768.txt">115.33 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/5108594067645371108%20to%20647709821457915915.txt">249.46 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-17T20:42:08Z</code></td>
@@ -992,7 +992,7 @@
       <td><a href="manifests/manifest_230411_7689210280991293768.txt">1.73 GiB</a></td>
       <td><a href="ipfs/7689210280991293768.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/7689210280991293768%20to%20367921302756169619.txt">3.32 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/7689210280991293768%20to%205108594067645371108.txt">605.74 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-15T20:01:35Z</code></td>
@@ -1000,7 +1000,7 @@
       <td><a href="manifests/manifest_230411_367921302756169619.txt">1.73 GiB</a></td>
       <td><a href="ipfs/367921302756169619.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/367921302756169619%20to%205140912318581454574.txt">2.55 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/367921302756169619%20to%207689210280991293768.txt">3.43 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-14T15:33:26Z</code></td>
@@ -1008,7 +1008,7 @@
       <td><a href="manifests/manifest_230411_5140912318581454574.txt">1.73 GiB</a></td>
       <td><a href="ipfs/5140912318581454574.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/5140912318581454574%20to%201873918047633104541.txt">2.51 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/5140912318581454574%20to%20367921302756169619.txt">2.55 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-13T20:37:57Z</code></td>
@@ -1016,7 +1016,7 @@
       <td><a href="manifests/manifest_230411_1873918047633104541.txt">1.73 GiB</a></td>
       <td><a href="ipfs/1873918047633104541.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1873918047633104541%20to%20609302931784914878.txt">2.46 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1873918047633104541%20to%205140912318581454574.txt">2.51 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-10T19:52:43Z</code></td>
@@ -1024,7 +1024,7 @@
       <td><a href="manifests/manifest_230411_609302931784914878.txt">1.73 GiB</a></td>
       <td><a href="ipfs/609302931784914878.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/609302931784914878%20to%201333808825789667682.txt">2.41 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/609302931784914878%20to%201873918047633104541.txt">2.46 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-09T20:06:49Z</code></td>
@@ -1032,7 +1032,7 @@
       <td><a href="manifests/manifest_230411_1333808825789667682.txt">1.73 GiB</a></td>
       <td><a href="ipfs/1333808825789667682.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1333808825789667682%20to%206812997867589219032.txt">2.52 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1333808825789667682%20to%20609302931784914878.txt">2.41 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-09T17:49:16Z</code></td>
@@ -1040,7 +1040,7 @@
       <td><a href="manifests/manifest_230411_6812997867589219032.txt">1.73 GiB</a></td>
       <td><a href="ipfs/6812997867589219032.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/6812997867589219032%20to%201214562332840994196.txt">2.63 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/6812997867589219032%20to%201333808825789667682.txt">2.50 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-08T16:52:18Z</code></td>
@@ -1048,7 +1048,7 @@
       <td><a href="manifests/manifest_230411_1214562332840994196.txt">1.73 GiB</a></td>
       <td><a href="ipfs/1214562332840994196.txt">IPFS CIDs</a></td>
       <td>↓ <a href="deltas/1214562332840994196%20to%204151868779723562813.txt">2.92 MiB</a></td>
-      <td></td>
+      <td>↑ <a href="deltas/1214562332840994196%20to%206812997867589219032.txt">2.66 MiB</a></td>
     </tr>
     <tr>
       <td><code>2013-05-06T17:28:17Z</code></td>
@@ -1206,8 +1206,8 @@
 </table>
 
 ```
-Total size:            3,172,927,494,761 bytes ≈ 2955.02 GiB
+Total size:            3,186,931,804,513 bytes ≈ 2968.06 GiB
 - Content:             3,136,262,425,821 bytes ≈ 2920.87 GiB
   - Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
-- Deltas:                 36,665,068,940 bytes ≈   34.15 GiB
+- Deltas:                 50,669,378,692 bytes ≈   47.19 GiB
 ```
