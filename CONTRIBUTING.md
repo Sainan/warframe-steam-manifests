@@ -30,18 +30,19 @@ The `n` flag means it will only compute CIDs without adding it to your node; con
 Deltas are created deterministically using [HDiffPatch v4.11.1](https://github.com/sisong/HDiffPatch/releases/tag/v4.11.1) in both directions:
 
 ```bash
-hdiffz -m-4 -SD -c-zstd-21-25 -d NEW OLD "NEW to OLD"
-hdiffz -m-4 -SD -c-zstd-21-25 -d OLD NEW "OLD to NEW"
+hdiffz -m-4 -SD -c-zstd-21-25 -d builds/NEW builds/OLD "deltas/NEW to OLD"
+hdiffz -m-4 -SD -c-zstd-21-25 -d builds/OLD builds/NEW "deltas/OLD to NEW"
 ```
 
 Please note that the `.DepotDownloader` folder needs to be deleted from both folders
 
-Finally, the deltas are recorded in the deltas folder like so:
+Finally, the "deltas" folder in this repository is populated with the metadata:
 
 ```bash
-for f in *; do
+mkdir -p metadata/deltas
+for f in deltas/*; do
   [ -f "$f" ] || continue   # skip directories, only process regular files
-  out="$f.txt"
+  out="metadata/$f.txt"
   stat --printf="%s\n" "$f" > "$out"
   sha1sum "$f" | awk '{print $1}' >> "$out"
   ipfs add -Qn "$f" >> "$out"
