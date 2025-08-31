@@ -230,7 +230,7 @@
       <td><code>2021-06-03T14:18:03Z</code></td>
       <td>896988770099174429</td>
       <td><a href="manifests/manifest_230411_896988770099174429.txt">26.82 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/896988770099174429.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -238,7 +238,7 @@
       <td><code>2021-05-25T18:48:22Z</code></td>
       <td>1516755954909330587</td>
       <td><a href="manifests/manifest_230411_1516755954909330587.txt">26.85 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/1516755954909330587.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -246,7 +246,7 @@
       <td><code>2021-04-14T22:10:40Z</code></td>
       <td>1471695976410467945</td>
       <td><a href="manifests/manifest_230411_1471695976410467945.txt">26.43 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/1471695976410467945.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -254,7 +254,7 @@
       <td><code>2021-03-19T16:27:54Z</code></td>
       <td>2360447165794825746</td>
       <td><a href="manifests/manifest_230411_2360447165794825746.txt">26.14 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/2360447165794825746.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -262,7 +262,7 @@
       <td><code>2021-01-25T17:51:43Z</code></td>
       <td>5695018007407901588</td>
       <td><a href="manifests/manifest_230411_5695018007407901588.txt">24.72 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/5695018007407901588.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -270,7 +270,7 @@
       <td><code>2020-11-20T00:33:15Z</code></td>
       <td>2281391866826940520</td>
       <td><a href="manifests/manifest_230411_2281391866826940520.txt">28.21 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/2281391866826940520.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -278,7 +278,7 @@
       <td><code>2020-11-05T13:33:46Z</code></td>
       <td>4589169429267220816</td>
       <td><a href="manifests/manifest_230411_4589169429267220816.txt">27.85 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/4589169429267220816.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -286,7 +286,7 @@
       <td><code>2020-08-26T02:57:01Z</code></td>
       <td>1198696432420157033</td>
       <td><a href="manifests/manifest_230411_1198696432420157033.txt">40.52 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/1198696432420157033.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -294,7 +294,7 @@
       <td><code>2020-08-13T03:06:19Z</code></td>
       <td>4862052161935324630</td>
       <td><a href="manifests/manifest_230411_4862052161935324630.txt">37.51 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/4862052161935324630.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -302,7 +302,7 @@
       <td><code>2020-06-13T23:18:01Z</code></td>
       <td>8322392782655512672</td>
       <td><a href="manifests/manifest_230411_8322392782655512672.txt">40.61 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/8322392782655512672.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -310,7 +310,7 @@
       <td><code>2020-03-25T04:24:11Z</code></td>
       <td>940429389442729133</td>
       <td><a href="manifests/manifest_230411_940429389442729133.txt">38.92 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/940429389442729133.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -318,7 +318,7 @@
       <td><code>2020-03-06T14:42:09Z</code></td>
       <td>3078917755629993445</td>
       <td><a href="manifests/manifest_230411_3078917755629993445.txt">38.71 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/3078917755629993445.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -326,7 +326,7 @@
       <td><code>2019-12-14T16:20:11Z</code></td>
       <td>5383208407459190147</td>
       <td><a href="manifests/manifest_230411_5383208407459190147.txt">36.80 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/5383208407459190147.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -334,7 +334,7 @@
       <td><code>2019-12-13T14:48:41Z</code></td>
       <td>1746499861411165604</td>
       <td><a href="manifests/manifest_230411_1746499861411165604.txt">36.68 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/1746499861411165604.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -342,7 +342,7 @@
       <td><code>2019-11-23T12:40:50Z</code></td>
       <td>5191423722994130705</td>
       <td><a href="manifests/manifest_230411_5191423722994130705.txt">39.99 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/5191423722994130705.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -350,7 +350,7 @@
       <td><code>2019-11-06T14:33:15Z</code></td>
       <td>4211752956119480973</td>
       <td><a href="manifests/manifest_230411_4211752956119480973.txt">33.82 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/4211752956119480973.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -358,7 +358,7 @@
       <td><code>2019-11-01T13:56:52Z</code></td>
       <td>5213493012981659231</td>
       <td><a href="manifests/manifest_230411_5213493012981659231.txt">33.97 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/5213493012981659231.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
@@ -366,7 +366,7 @@
       <td><code>2019-09-09T21:57:52Z</code></td>
       <td>6484357939617346090</td>
       <td><a href="manifests/manifest_230411_6484357939617346090.txt">32.79 GiB</a></td>
-      <td></td>
+      <td><a href="ipfs/6484357939617346090.txt">IPFS CIDs</a></td>
       <td></td>
       <td></td>
     </tr>
