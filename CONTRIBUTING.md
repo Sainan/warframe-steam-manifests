@@ -26,12 +26,14 @@ ipfs add -r MANIFEST_ID_HERE > MANIFEST_ID_HERE.txt
 Or in bulk:
 
 ```bash
+cd builds
 mkdir -p ../metadata/ipfs
 for f in *; do
   out="../metadata/ipfs/$f.txt"
   [ -f "$out" ] && continue # skip if out file already exists
   ipfs add -r $f > "$out"
 done
+cd ..
 ```
 
 ## Deltas
