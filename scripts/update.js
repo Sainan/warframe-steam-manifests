@@ -2,10 +2,16 @@ const fs = require("fs");
 const path = require("path");
 
 function formatBytes(bytes) {
-  const useGiB = bytes >= 1000 ** 3;
-  const divisor = useGiB ? 1024 ** 3 : 1024 ** 2;
-  const unit = useGiB ? "GiB" : "MiB";
-  return `${(bytes / divisor).toFixed(2)} ${unit}`;
+  if (bytes >= 1000 ** 3) {
+    return `${(bytes / 1024 ** 3).toFixed(2)} GiB`;
+  }
+  if (bytes >= 1024 ** 2) {
+    return `${(bytes / 1024 ** 2).toFixed(2)} MiB`;
+  }
+  if (bytes >= 1024) {
+    return `${(bytes / 1024).toFixed(2)} KiB`;
+  }
+  return `${bytes} B`;
 }
 
 function getSize() {
