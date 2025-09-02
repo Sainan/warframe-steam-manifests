@@ -10,7 +10,7 @@ The manifests folder is populated with the results of `DepotDownloader -app 2304
 
 ### From an existing copy
 
-1. Verify that your folder matches the Steam manifest using `node scripts/verify.js <manifestId> <path>`.
+1. Verify that your folder matches the Steam manifest using `node scripts/verify.js <path> [manifestId]`.
 2. Within it, run `ipfs add -r . > ../ipfs.txt` to get the CID list. Notably the file we're writing to is outside of that folder to avoid dirtying it.
 3. Ensure the folder name in the text file is the manifest id.
 4. Appropriately add the text file to the ipfs folder here.
