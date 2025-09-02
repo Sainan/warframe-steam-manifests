@@ -41,10 +41,42 @@ function listFiles(dir) {
   return result;
 }
 
+function detectManifestId(targetPath) {
+  const manifestsDir = path.join(__dirname, "..", "manifests");
+  const manifestIds = fs
+    .readdirSync(manifestsDir)
+    .map((file) => file.match(/_(\d+)\.txt$/))
+    .filter(Boolean)
+    .map((match) => match[1]);
+
+  for (const id of manifestIds) {
+    if (targetPath.includes(id)) return id;
+  }
+
+  const ipfsDir = path.join(__dirname, "..", "ipfs");
+  for (const id of manifestIds) {
+    const ipfsFile = path.join(ipfsDir, `${id}.txt`);
+    if (!fs.existsSync(ipfsFile)) continue;
+    const lines = fs.readFileSync(ipfsFile, "utf8").split(/\r?\n/);
+    for (const line of lines) {
+      const match = line.match(/^added\s+(\S+)/);
+      if (match && targetPath.includes(match[1])) return id;
+    }
+  }
+
+  return null;
+}
+
 async function main() {
-  const [manifestId, targetPath] = process.argv.slice(2);
-  if (!manifestId || !targetPath) {
-    console.error("Usage: node scripts/verify.js <manifestId> <path>");
+  const [targetPath, manifestIdArg] = process.argv.slice(2);
+  if (!targetPath) {
+    console.error("Usage: node scripts/verify.js <path> [manifestId]");
+    process.exit(1);
+  }
+
+  let manifestId = manifestIdArg || detectManifestId(targetPath);
+  if (!manifestId) {
+    console.error("Could not determine manifest id");
     process.exit(1);
   }
 
