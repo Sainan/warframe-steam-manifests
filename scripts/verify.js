@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { sha1 } = require("./common");
+const { sha1, getRootIpfsCid } = require("./common");
 
 function findManifest(id) {
   const manifestsDir = path.join(__dirname, "..", "manifests");
@@ -53,15 +53,9 @@ function detectManifestId(targetPath) {
     if (targetPath.includes(id)) return id;
   }
 
-  const ipfsDir = path.join(__dirname, "..", "ipfs");
   for (const id of manifestIds) {
-    const ipfsFile = path.join(ipfsDir, `${id}.txt`);
-    if (!fs.existsSync(ipfsFile)) continue;
-    const lines = fs.readFileSync(ipfsFile, "utf8").split(/\r?\n/);
-    for (const line of lines) {
-      const match = line.match(/^added\s+(\S+)/);
-      if (match && targetPath.includes(match[1])) return id;
-    }
+    const cid = getRootIpfsCid(id);
+    if (cid && targetPath.includes(cid)) return id;
   }
 
   return null;

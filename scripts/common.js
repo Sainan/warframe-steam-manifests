@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const crypto = require("crypto");
 
 function sha1(file) {
@@ -11,6 +12,16 @@ function sha1(file) {
   });
 }
 
+function getRootIpfsCid(manifestId) {
+  const ipfsFile = path.join(__dirname, "..", "ipfs", `${manifestId}.txt`);
+  if (!fs.existsSync(ipfsFile)) return null;
+  const lines = fs.readFileSync(ipfsFile, "utf8").trim().split(/\r?\n/);
+  const last = lines[lines.length - 1];
+  const match = last.match(/^added\s+(\S+)/);
+  return match ? match[1] : null;
+}
+
 module.exports = {
   sha1,
+  getRootIpfsCid,
 };
