@@ -1,3 +1,13 @@
+# warframe-steam-manifests
+
+Checksums and content identifiers for all Warframe versions ever uploaded to Steam.
+
+## Guides
+
+- [Verify an existing installation](guides/verify.md)
+- [Repair an existing installation via IPFS](guides/repair-via-ipfs.md)
+- [Upgrade/downgrade an existing installation via IPFS](guides/patch-via-ipfs.md)
+
 ## Manifests
 
 <table>

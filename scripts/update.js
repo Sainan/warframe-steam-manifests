@@ -83,6 +83,22 @@ const fh = fs.createWriteStream(path.join(__dirname, "..", "README.md"), {
   flags: "w",
 });
 
+fh.write("# warframe-steam-manifests\n");
+fh.write("\n");
+fh.write(
+  "Checksums and content identifiers for all Warframe versions ever uploaded to Steam.\n",
+);
+fh.write("\n");
+fh.write("## Guides\n");
+fh.write("\n");
+fh.write("- [Verify an existing installation](guides/verify.md)\n");
+fh.write(
+  "- [Repair an existing installation via IPFS](guides/repair-via-ipfs.md)\n",
+);
+fh.write(
+  "- [Upgrade/downgrade an existing installation via IPFS](guides/patch-via-ipfs.md)\n",
+);
+fh.write("\n");
 fh.write("## Manifests\n");
 fh.write("\n");
 const rows = [];
