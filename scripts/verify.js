@@ -84,20 +84,50 @@ async function main() {
   const missing = [];
   const mismatched = [];
 
+  const tasks = [];
   for (const [rel, { size, sha }] of manifest.entries()) {
-    const abs = path.join(targetPath, rel.split("/").join(path.sep));
-    if (!fs.existsSync(abs)) {
-      missing.push(rel);
-      continue;
-    }
-    const stats = fs.statSync(abs);
-    if (stats.size !== size) {
-      mismatched.push(`${rel} (size ${stats.size} != ${size})`);
-      continue;
-    }
-    const actualSha = await sha1(abs);
-    if (actualSha !== sha) {
-      mismatched.push(`${rel} (sha ${actualSha} != ${sha})`);
+    tasks.push(
+      (async () => {
+        const abs = path.join(targetPath, rel.split("/").join(path.sep));
+        if (!fs.existsSync(abs)) {
+          return { type: "missing", rel };
+        }
+        const stats = fs.statSync(abs);
+        if (stats.size !== size) {
+          return {
+            type: "mismatched",
+            rel,
+            msg: `size ${stats.size} != ${size}`,
+          };
+        }
+        try {
+          const actualSha = await sha1(abs);
+          if (actualSha !== sha) {
+            return {
+              type: "mismatched",
+              rel,
+              msg: `sha ${actualSha} != ${sha}`,
+            };
+          }
+        } catch (err) {
+          return {
+            type: "mismatched",
+            rel,
+            msg: `error ${err.message}`,
+          };
+        }
+        return null;
+      })(),
+    );
+  }
+
+  const results = await Promise.all(tasks);
+  for (const res of results) {
+    if (!res) continue;
+    if (res.type === "missing") {
+      missing.push(res.rel);
+    } else if (res.type === "mismatched") {
+      mismatched.push(`${res.rel} (${res.msg})`);
     }
   }
 
