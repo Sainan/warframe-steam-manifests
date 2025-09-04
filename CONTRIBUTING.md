@@ -48,7 +48,7 @@ hdiffz -m-4 -SD -c-zstd-21-25 -d builds/OLD builds/NEW "deltas/OLD to NEW"
 Before you begin, some important notes:
 
 - The `.DepotDownloader` folder needs to be deleted from both folders (e.g. via `rm -r builds/*/.DepotDownloader`)
-- The earliest builds are trivial to deltify, but bigger builds (with bigger diffs) increase memory and time requirements. ~45 GiB builds = 140 GiB memory, ~1 hour. 2020 ensmallening = 328 GiB memory, ~36 hours. Ensure you have enough swap and patience.
+- The earliest builds are trivial to deltify, but bigger builds (with bigger diffs) increase memory and time requirements. ~45 GiB builds = up to 140 GiB memory and 90 minutes. 2020 ensmallening = up to 328 GiB memory and 36 hours. Ensure you have enough swap and patience.
 
 Finally, the "deltas" folder in this repository is populated with the metadata:
 

@@ -289,7 +289,7 @@ Checksums and content identifiers for all Warframe versions ever uploaded to Ste
       <td>4589169429267220816</td>
       <td><a href="manifests/manifest_230411_4589169429267220816.txt">27.85 GiB</a></td>
       <td><a href="ipfs/4589169429267220816.txt">IPFS CIDs</a></td>
-      <td></td>
+      <td>↓ <a href="deltas/4589169429267220816%20to%201198696432420157033.txt">26.17 GiB</a></td>
       <td>↑ <a href="deltas/4589169429267220816%20to%202281391866826940520.txt">1.52 GiB</a></td>
     </tr>
     <tr>
@@ -1216,8 +1216,8 @@ Checksums and content identifiers for all Warframe versions ever uploaded to Ste
 </table>
 
 ```
-Total size:            3,415,418,370,851 bytes ≈ 3180.86 GiB
+Total size:            3,443,520,438,182 bytes ≈ 3207.03 GiB
 - Content:             3,136,262,425,821 bytes ≈ 2920.87 GiB
   - Unique files only: 2,835,830,598,290 bytes ≈ 2641.07 GiB
-- Deltas:                279,155,945,030 bytes ≈  259.98 GiB
+- Deltas:                307,258,012,361 bytes ≈  286.16 GiB
 ```
