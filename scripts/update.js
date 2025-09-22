@@ -93,9 +93,6 @@ fh.write("## Guides\n");
 fh.write("\n");
 fh.write("- [Verify an existing installation](guides/verify.md)\n");
 fh.write(
-  "- [Repair an existing installation via IPFS](guides/repair-via-ipfs.md)\n",
-);
-fh.write(
   "- [Upgrade/downgrade an existing installation via IPFS](guides/patch-via-ipfs.md)\n",
 );
 fh.write("\n");
